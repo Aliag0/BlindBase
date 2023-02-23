@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content=" initial-scale=1.0">
+      <link rel="stylesheet" href="BlindBase.css" type="text/css">
+      <title>Blind Base</title>
+</head>
+<body>
+      
+      <!-- menu pour voire l'etat, le volume, la batterie et le fichier son des 4 bases -->
+      <nav class="navbar" role="navigation"> 
+            <h1 class="logo" id="text_color">BlindBase</h1> 
+            <ul class="navbar__links" id="text_color">
+                  <li class="navbar__link">
+                        <p href="#">
+                              <strong class="theme" id="text_color">Theme sombre</strong> 
+                              <label class="switch">
+                                    <input type="checkbox" id="checkbox" onclick="checkBox()">
+                                    <span class="slider2 round"></span>
+                              </label>
+                        </p>
+                  </li>
+                  <li class="navbar__link">
+                        <p href="#" id="all">
+                              <strong id="text_color">All<div class="fleche_all fleches" id="text_color"></div></strong>
+                        </p>
+                  </li>
+                  <li class="navbar__link" >
+                        <p href="#" id="Fleche0">
+                              <strong id="text_color">Base 1<div class="fleche0 fleches" id="text_color"></div></strong>
+                              <div class="etat0">
+                                    <p class="on_off0" id="text_color">OFF</p>
+                                    <p id="text_color">Volume: <span class="value1">50</span>%</p>
+                                    <div class="slider">
+                                          <input type="range" min="0" max="100" value="50" id="slider1" oninput="sliderJs('slider1', '.value1', 1)">
+                                    </div>
+                                    <p id="text_color">Batterie: 63%</p>
+                                    <p id="text_color">Fichier son</p>
+                              </div>
+                        </p>
+                  </li>
+                  <li class="navbar__link">
+                        <p href="#" id="Fleche1">
+                              <strong id="text_color">Base 2<div class="fleche1 fleches" id="text_color"></div></strong>
+                              <div class="etat1">
+                                    <p class="on_off1" id="text_color">OFF</p>
+                                    <p id="text_color">Volume: <span class="value2">50</span>%</p>
+                                    <div class="slider">
+                                          <input type="range" min="0" max="100" value="50" id="slider2" oninput="sliderJs('slider2', '.value2', 2)">
+                                    </div>
+                                    <p id="text_color">Batterie: 63%</p>
+                                    <p id="text_color">Fichier son</p>
+                              </div>
+                        </p>
+                  </li>
+                  <li class="navbar__link">
+                        <p href="#" id="Fleche2">
+                              <strong id="text_color">Base 3<div class="fleche2 fleches" id="text_color"></div></strong>
+                              <div class="etat2">
+                                    <p class="on_off2" id="text_color">OFF</p>
+                                    <p id="text_color">Volume: <span class="value3">50</span>%</p>
+                                    <div class="slider">
+                                          <input type="range" min="0" max="100" value="50" id="slider3" oninput="sliderJs('slider3', '.value3', 3)">
+                                    </div>
+                                    <p id="text_color">Batterie: 63%</p>
+                                    <p id="text_color">Fichier son</p>
+                              </div>
+                        </p>
+                  </li>
+                  <li class="navbar__link">
+                        <p href="#" id="Fleche3">
+                              <strong id="text_color">Base 4<div class="fleche3 fleches" id="text_color"></div></strong>
+                              <div class="etat3">
+                                    <p class="on_off3" id="text_color">OFF</p>
+                                    <p id="text_color">Volume: <span class="value4">50</span>%</p>
+                                    <div class="slider">
+                                          <input type="range" min="0" max="100" value="50" id="slider4" oninput="sliderJs('slider4', '.value4', 4)">
+                                    </div>
+                                    <p id="text_color">Batterie: 63%</p>
+                                    <p id="text_color">Fichier son</p>
+                              </div>
+                        </p>
+                  </li>
+            </ul>   
+            <button class="burger">
+                  <span class="bar"></span>  
+            </button>   
+      </nav>
+      <!-- tableau des scores -->
+      <div class="score">
+            <table class="table_score">
+                  <tr>
+                        <td></td>
+                        <td class="inscr_score">1</td>
+                        <td class="inscr_score">2</td>
+                        <td class="inscr_score">3</td>
+                        <td class="inscr_score">4</td>
+                        <td class="inscr_score">5</td>
+                        <td class="inscr_score">6</td>
+                        <td class="inscr_score">7</td>
+                        <td class="inscr_score">8</td>
+                        <td class="inscr_score">9</td>
+                        <td class="inscr_score" id="right">T</td>
+                  </tr>
+                  <tr>
+                        <td class="guest">GUEST</td>
+                        <td> <div class="score_" type="text" onclick="Score('guest_1', 'guest_total')"> <p id="guest_1">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('guest_2', 'guest_total')"> <p id="guest_2">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('guest_3', 'guest_total')"> <p id="guest_3">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('guest_4', 'guest_total')"> <p id="guest_4">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('guest_5', 'guest_total')"> <p id="guest_5">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('guest_6', 'guest_total')"> <p id="guest_6">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('guest_7', 'guest_total')"> <p id="guest_7">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('guest_8', 'guest_total')"> <p id="guest_8">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('guest_9', 'guest_total')"> <p id="guest_9">0</p> </div> </td>
+                        <td> <div class="score_" id="right" type="text"> <p id="guest_total">0</p> </div> </td>
+                  </tr>
+                  <tr>
+                        <td class="home">HOME</td>
+                        <td> <div class="score_" type="text" onclick="Score('home_1', 'home_total')"> <p id="home_1">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('home_2', 'home_total')"> <p id="home_2">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('home_3', 'home_total')"> <p id="home_3">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('home_4', 'home_total')"> <p id="home_4">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('home_5', 'home_total')"> <p id="home_5">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('home_6', 'home_total')"> <p id="home_6">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('home_7', 'home_total')"> <p id="home_7">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('home_8', 'home_total')"> <p id="home_8">0</p> </div> </td>
+                        <td> <div class="score_" type="text" onclick="Score('home_9', 'home_total')"> <p id="home_9">0</p> </div> </td>
+                        <td> <div class="score_" id="right" type="text"> <p id="home_total">0</p> </div> </td>
+                  </tr>
+            </table>
+      </div>
+      <!-- terrain de baseball avec les 4 bases cliquable pour activation -->
+      <div class="terrain">
+            <div class="carre"></div>
+            <div class="base_1 base_div">
+                  <input class="base" type="button" value="1" id="button0">
+            </div> 
+            <div class="base_2 base_div">
+                  <input class="base" type="button" value="2" id="button1">
+            </div> 
+            <div class="base_3 base_div">
+                  <input class="base" type="button" value="3" id="button2">
+            </div> 
+            <div class="base_4 base_div">
+                  <input class="base" type="button" value="4" id="button3">
+            </div> 
+            <div class="chemainX"></div>
+            <div class="chemainY"></div>
+            <!-- <div class="button_play">
+                  <input class="play" type="button" value="Start game" id="bplay" onclick="playGame()">
+            </div> -->
+      </div>
+      <script src="Blind Base.js"></script>
+</body>
+</html>
